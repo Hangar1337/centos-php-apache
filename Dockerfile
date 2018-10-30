@@ -19,4 +19,4 @@ ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 EXPOSE 80
 
-WORKDIR /www
+WORKDIR /var/www
