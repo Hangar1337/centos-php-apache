@@ -10,7 +10,8 @@ RUN yum -y install httpd yum-utils epel-release http://rpms.famillecollet.com/en
     && touch /etc/php.d/app.ini && echo "date.timezone=UTC" >> /etc/php.d/app.ini \
     && usermod -u 1000 apache \
     && ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
-	&& echo "NETWORKING=yes" > /etc/sysconfig/network
+	&& echo "NETWORKING=yes" > /etc/sysconfig/network \
+	&& rm -rf /var/www/*
 
 COPY httpd.conf /etc/httpd/conf/
 COPY vhost.conf /etc/httpd/vhost/
