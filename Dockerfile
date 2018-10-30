@@ -15,6 +15,7 @@ RUN yum -y install httpd yum-utils epel-release http://rpms.famillecollet.com/en
 
 COPY httpd.conf /etc/httpd/conf/
 COPY vhost.conf /etc/httpd/vhost/
+COPY conf.modules.d/* /etc/httpd/conf.modules.d/
 
 ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
