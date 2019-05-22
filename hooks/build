@@ -1,4 +1,4 @@
 #!/bin/bash
 echo Build $DOCKER_TAG
 echo Run docker build --build-arg PHP_VERS=$DOCKER_TAG -t $IMAGE_NAME .
-docker build --build-arg PHP_VERS=$DOCKER_TAG -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+docker build --build-arg PHP_VERS=$DOCKER_TAG -t $IMAGE_NAME .
