@@ -1,9 +1,11 @@
 FROM centos:7
 MAINTAINER "Anthony Lhériau" <anthony@hangar1337.fr>
 
+ARG PHP_VERS
+
 # Install and configure packages
 RUN yum -y install httpd yum-utils epel-release http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
-    && yum-config-manager --enable remi-php72 \
+    && yum-config-manager --enable $(sed "s/\.//g" <<< remi-php$PHP_VERS) \
     && yum install -y php php-mysql php-opcache php-cli php-xml php-pdo php-process php-intl php-mbstring \
     && yum clean all \
     && rm /etc/httpd/conf.d/welcome.conf \
