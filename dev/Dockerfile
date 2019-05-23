@@ -1,6 +1,6 @@
-MAINTAINER "Hangar 1337" <contact@hangar1337.fr>
 ARG PHP_VERS
 FROM hangar1337/centos-php-apache:$PHP_VERS
+MAINTAINER "Hangar 1337" <contact@hangar1337.fr>
 
 # Install and configure packages
 RUN curl -sL https://rpm.nodesource.com/setup_11.x | bash -
