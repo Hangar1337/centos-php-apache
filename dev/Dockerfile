@@ -1,4 +1,5 @@
-FROM hangar1337/centos-php-apache:7.2
+ARG PHP_VERS
+FROM hangar1337/centos-php-apache:$PHP_VERS
 MAINTAINER "Hangar 1337" <contact@hangar1337.fr>
 
 # Install and configure packages
